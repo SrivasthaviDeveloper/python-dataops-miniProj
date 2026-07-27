@@ -1,34 +1,39 @@
 import os
+
 from google.cloud import storage
 
 from config.settings import (
     BUCKET_NAME,
     GOOGLE_APPLICATION_CREDENTIALS,
-    RAW_DATA_PATH,
+    PROCESSED_DATA_PATH,
 )
+
+from src.utils.logger import logger
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = GOOGLE_APPLICATION_CREDENTIALS
 
 
 def upload_to_gcs():
-    try:
-        print("Connecting to Google Cloud Storage...")
 
-        print(f"Bucket: {BUCKET_NAME}")
-        print(f"Uploading file: {RAW_DATA_PATH}")
+    try:
+
+        logger.info("Connecting to Google Cloud Storage")
 
         client = storage.Client()
 
         bucket = client.bucket(BUCKET_NAME)
 
-        blob = bucket.blob("users.csv")
+        blob = bucket.blob("users_clean.csv")
 
-        blob.upload_from_filename(RAW_DATA_PATH)
+        blob.upload_from_filename(PROCESSED_DATA_PATH)
 
-        print("✅ File uploaded successfully!")
+        logger.info("Upload completed successfully")
 
-    except Exception as e:
-        print(f"Upload failed: {e}")
+    except Exception:
+
+        logger.exception("Upload failed")
+
+        raise
 
 
 if __name__ == "__main__":
