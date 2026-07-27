@@ -1,1 +1,1 @@
-![Python CI](https://github.com/<username>/<repo>/actions/workflows/python-ci.yml/badge.svg)
+![Python CI](https://github.com/SrivasthaviDeveloper/python-datatops-miniProj/actions/workflows/python-ci.yml/badge.svg)
