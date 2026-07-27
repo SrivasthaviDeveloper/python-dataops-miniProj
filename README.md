@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python DataOps Pipeline using Google Cloud Platform
 
 ## Project Overview
@@ -112,3 +113,6 @@ src/
 # Python DataOps Pipeline using Google Cloud Platform
 
 ![Python CI](https://github.com/SrivasthaviDeveloper/python-dataops-miniProj/actions/workflows/python-ci.yml/badge.svg)
+=======
+![Python CI](https://github.com/SrivasthaviDeveloper/python-datatops-miniProj/actions/workflows/python-ci.yml/badge.svg)
+>>>>>>> c8198d8d77d03f21b24d0d51727e6b2ef1ba7b2f
